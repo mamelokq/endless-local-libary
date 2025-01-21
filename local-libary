@@ -775,7 +775,6 @@ function library:init()
         if input.UserInputType == Enum.UserInputType.MouseMovement then
             if library.open then
                 mousemove:Fire(inputservice:GetMouseLocation());
-                updateCursor();
 
                 if library.CurrentTooltip ~= nil then
                     local mousePos = inputservice:GetMouseLocation()
@@ -826,7 +825,6 @@ function library:init()
             actionservice:UnbindAction('FreezeMovement');
         end
 
-        updateCursor();
         for _,window in next, self.windows do
             window:SetOpen(bool);
         end

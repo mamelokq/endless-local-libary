@@ -1,11 +1,3 @@
---[[
-Octohook ui lib informant version
-Developed by liam#4567
-Edited by xz#1111
-]]
-
--- // Load
-
 local startupArgs = ({...})[1] or {}
 
 if getgenv().library ~= nil then
@@ -706,6 +698,7 @@ function library:init()
         self.images[i] = readfile(self.cheatname..'/assets/'..i..'.oh');
     end
 
+
     local screenGui = Instance.new('ScreenGui');
     if syn then syn.protect_gui(screenGui); end
     screenGui.Parent = game:GetService('CoreGui');
@@ -782,6 +775,7 @@ function library:init()
         if input.UserInputType == Enum.UserInputType.MouseMovement then
             if library.open then
                 mousemove:Fire(inputservice:GetMouseLocation());
+                updateCursor();
 
                 if library.CurrentTooltip ~= nil then
                     local mousePos = inputservice:GetMouseLocation()
@@ -832,6 +826,7 @@ function library:init()
             actionservice:UnbindAction('FreezeMovement');
         end
 
+        updateCursor();
         for _,window in next, self.windows do
             window:SetOpen(bool);
         end

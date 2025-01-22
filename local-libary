@@ -48,7 +48,7 @@ local library = {
         ['notification'] = 1400;
     },
     stats = {
-        ['fps'] = 0;
+        ['fps'] = 999;
         ['ping'] = 0;
     };
     images = {
